@@ -1,0 +1,33 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+  
+zh-CN:
+  
+  #Partx
+  Successfully Saved! : '信息已保存！'
+  Successfully Updated! : '信息已更新！'
+  Data Error. Not Saved! : '数据错误。 信息无法保存！'
+  Data Error. Not Updated! : '数据错误。信息无法更新！'
+  Duplicate Product Name : '同一项目外购件不能重名！'
+  'Short Name' : '简称：'
+  Part Name : '项目名称'
+  Customer Name : '客户'
+  Customer : '客户'
+  Unit : '单位'
+  Qty : '数量'
+  Spec : '规格'
+  'Part#' : '产品#'
+  Last Updated By         : '更改'  
+  Brief Note : '简注'
+  Yes : '是'
+  No  : '否'
+  yes : '是'
+  no  : '否'
+  Must be unique! : '重名！'
+  No duplicate name : '重名'
+  Components : '部件清单'
+  Update Component : '更新部件'
+  Edit Component : '更新部件'
+  Create Component : '生成部件'
+  Component Info : '部件内容'
+  

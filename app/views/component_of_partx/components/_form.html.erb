@@ -1,0 +1,17 @@
+<% if @view_in_config && @erb_code %>
+  <%= render inline: @erb_code %>
+  
+  <% else %>
+<%= simple_form_for @component do |f| %> 
+  <%= f.input :part_id_noupdate, :label => t('Part#'), :readonly => true, :input_html => {:value => @part.id} %>
+  <%= f.input :part_name, :label => t('Part Name'), :readonly => true, :input_html => {:value => @part.name} %>
+  <%= f.input :name, :label => t('Component Name') %>  
+  <%= f.input :spec, :label => t('Spec'), :input_html => {:rows => 1}, :readonly => readonly?(@component, 'spec') %>
+  <%= f.input :qty, :label => t('Qty'), :readonly => readonly?(@component, 'qty') %>
+  <%= f.input :unit, :label => t('Qty Unit'), :collection => @qty_unit, :readonly => readonly?(@component, 'unit') %>
+    
+  <%= link_to t('Back'), SUBURI + "/authentify/view_handler?index=0", :class => BUTTONS_CLS['action'] %>
+  <%= f.button :submit, t('Save'), :class => BUTTONS_CLS['action'] %>  
+<% end %>  
+
+<% end %>
