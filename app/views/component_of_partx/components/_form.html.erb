@@ -9,6 +9,9 @@
   <%= f.input :spec, :label => t('Spec'), :input_html => {:rows => 1}, :readonly => readonly?(@component, 'spec') %>
   <%= f.input :qty, :label => t('Qty'), :readonly => readonly?(@component, 'qty') %>
   <%= f.input :unit, :label => t('Qty Unit'), :collection => @qty_unit, :readonly => readonly?(@component, 'unit') %>
+  <%= f.input :production_start_date, :label => t('Production Start Date'), :as => :string %>
+  <%= f.input :production_finish_date, :label => t('Production Finish Date'), :as => :string %>  
+  <%= f.input :ontime_indicator, :label => t('On Time'), :collection => [[t('Green - on time'),'green'], [t('Yellow - little hehind'), 'yellow'], [t('Red - late'), 'red']] %>
     
   <%= link_to t('Back'), SUBURI + "/authentify/view_handler?index=0", :class => BUTTONS_CLS['action'] %>
   <%= f.button :submit, t('Save'), :class => BUTTONS_CLS['action'] %>  

@@ -9,8 +9,11 @@ class CreateComponentOfPartxComponents < ActiveRecord::Migration
       t.string :unit
       t.date :production_start_date
       t.date :production_finish_date
+      t.string :ontime_indicator
 
       t.timestamps
     end
+    
+    add_index :component_of_partx_components, :part_id
   end
 end

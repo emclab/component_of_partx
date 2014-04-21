@@ -30,4 +30,9 @@ zh-CN:
   Edit Component : '更新部件'
   Create Component : '生成部件'
   Component Info : '部件内容'
-  
+  Production Start Date : '生产开始日期'
+  Production Finish Date : '生产完成日期'
+  On Time : '进度标'
+  Green - on time : '绿 - 按时'
+  Red - late : '红 - 晚'
+  Yellow - little hehind : '黄 - 稍迟'

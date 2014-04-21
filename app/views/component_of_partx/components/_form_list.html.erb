@@ -10,6 +10,9 @@
 			<th><%= t('Component Name') %></th>
 			<th><%= t('Spec') %></th>
 			<th><%= t('Qty/Unit') %></th>
+			<th><%= t('On Time') %></th>
+			<th><%= t('Production Start Date') %></th>
+			<th><%= t('Production Finish Date') %></th>	
 			<th><%= t('Last Updated By') %></th>
 			<th></th>
 			<th></th>
@@ -22,8 +25,11 @@
 		  	<td><%= prt(r, :name) %></td>
 			<td><%= prt(r, :spec) %></td>
 			<td><%= prt(r, :qty) %>/<%= prt(r, :unit) %></td>
+			<td><%= image_tag('component_of_partx/'+RED_GREEN_YELLOW_CLS[r.ontime_indicator], size: '23x23') if r.ontime_indicator.present? %></td>
+			<td><%= r.production_start_date.strftime("%Y/%m/%d") if r.production_start_date.present? %></td>
+			<td><%= r.production_finish_date.strftime("%Y/%m/%d") if r.production_finish_date.present? %></td>
 			<td><%= prt(r, 'last_updated_by.name') %></td> 
-			<td><%#= link_to t('QC Record'), SUBURI + "/authentify/view_handler?index=1&url=#{SUBURI + CGI::escape(eval(ComponentOfPartx.qc_record_index_path.to_s))}", :class => BUTTONS_CLS['action']   %></td>
+			<td><%= link_to t('QC Record'), SUBURI + "/authentify/view_handler?index=1&url=#{SUBURI + CGI::escape(commonx.logs_path(:resource_name => 'component_of_partx/components', resource_id: r.part_id, :subaction => 'component'))}", :class => BUTTONS_CLS['action']   %></td>
 			<td><%= link_to t('Edit'), SUBURI + "/authentify/view_handler?index=1&url=#{edit_component_path(r, :parent_record_id => r.part_id, :parent_resource => ComponentOfPartx.part_class.to_s.underscore.pluralize)}", :class => BUTTONS_CLS['action']  if has_action_right?('update', params[:controller], r) %></td>
 		  </tr>
 		<% end %>

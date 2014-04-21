@@ -1,11 +1,11 @@
 module ComponentOfPartx
   class Component < ActiveRecord::Base
     attr_accessor :part_name, :part_id_noupdate
-    attr_accessible :last_updated_by_id, :name, :part_id, :qty, :spec, :unit, :production_start_date, :production_finish_date,
+    attr_accessible :last_updated_by_id, :name, :part_id, :qty, :spec, :unit, :production_start_date, :production_finish_date, :ontime_indicator,
                     :part_name,
                     :as => :role_new
     attr_accessible :last_updated_by_id, :name, :qty, :spec, :unit, :production_start_date, :production_finish_date,
-                    :part_name, :part_id_noupdate,
+                    :part_name, :part_id_noupdate, :ontime_indicator,
                     :as => :role_update   
                     
     belongs_to :part, :class_name => ComponentOfPartx.part_class.to_s
