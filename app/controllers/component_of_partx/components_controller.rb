@@ -28,6 +28,7 @@ module ComponentOfPartx
       else
         @part = ComponentOfPartx.part_class.find_by_id(params[:component][:part_id]) if params[:component].present? && params[:component][:part_id].present?
         @qty_unit = find_config_const('piece_unit').split(',').map(&:strip)
+        @erb_code = find_config_const('component_new_view', 'component_of_partx')
         flash[:notice] = t('Data Error. Not Saved!')
         render 'new'
       end
@@ -48,6 +49,7 @@ module ComponentOfPartx
       else
         @part = ComponentOfPartx.part_class.find_by_id(params[:component][:part_id]) if params[:component].present? && params[:component][:part_id].present?
         @qty_unit = find_config_const('piece_unit').split(',').map(&:strip)
+        @erb_code = find_config_const('component_edit_view', 'component_of_partx')
         flash[:notice] = t('Data Error. Not Updated!')
         render 'edit'
       end
